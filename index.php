@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'database.php'; ?>
+<?php include 'top.html'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session 13</title>
-</head>
+<main class="container">
+    <?php
 
-<body>
-    <article>
-        <img src="" alt="">
-        <img src="" alt="">
-        <h3></h3>
-        <strong></strong>
-        <strong></strong>
-        <li></li>
-        <a href=""></a>
-    </article>
-</body>
+    var_dump($_GET);
+    if (empty($_GET["categorie"])) {
+        $category = 'home';
+    } else {
+        $category = $_GET["categorie"];
+    }
 
-</html>
+    include $category . '.php';
+    ?>
+</main>
+
+<?php include 'bottom.html'; ?>
