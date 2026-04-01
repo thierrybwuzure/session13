@@ -1,18 +1,15 @@
 <?php include 'database.php'; ?>
-<?php include 'top.html'; ?>
 
 <main class="container">
     <?php
 
     var_dump($_GET);
-    if (empty($_GET["categorie"])) {
-        $category = 'home';
+    if (empty($_GET["detail"])) {
+        $page = 'catalog';
     } else {
-        $category = $_GET["categorie"];
+        $page = 'detail';
     }
 
-    include $category . '.php';
+    include $page . '.php';
     ?>
 </main>
-
-<?php include 'bottom.html'; ?>
